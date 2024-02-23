@@ -15,5 +15,5 @@ To estimate age:
 ## Development
 
 1. Install dependencies with `npm i`
-
 2. Run the app locally with `npm start`
+3. Deploy to GitHub Pages with `npm run deploy``
