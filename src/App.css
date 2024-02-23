@@ -7,6 +7,15 @@
   flex-direction: column;
 }
 
+.wrapper h1 {
+  margin-bottom: 0;
+}
+
+.helper-text {
+  font-size: 0.85rem;
+  color: #555;
+}
+
 .upload--wrapper {
   margin-top: 1rem;
   margin-bottom: 1rem;

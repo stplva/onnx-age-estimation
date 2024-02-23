@@ -107,6 +107,10 @@ function App() {
   return (
     <div className="wrapper">
       <h1>Age Estimator</h1>
+      <p className="helper-text">
+        For better results please use a high-quality image of your face with
+        simple/plain background.
+      </p>
       {selectedImage && (
         <img
           id="inputImage"
