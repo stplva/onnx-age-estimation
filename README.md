@@ -14,8 +14,6 @@ To estimate age:
 
 ## Development
 
-1. Download the pre-trained model from [onnx' GitHub](https://github.com/onnx/models/blob/main/vision/body_analysis/age_gender/models/age_googlenet.onnx).
+1. Install dependencies with `npm i`
 
-2. Install dependencies with `npm i`
-
-3. Run the app locally with `npm start`
+2. Run the app locally with `npm start`
