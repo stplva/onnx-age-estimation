@@ -6,3 +6,36 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+p,
+span,
+button,
+input {
+  font-size: 1rem;
+}
+
+button {
+  width: fit-content;
+  padding: 0.7rem 1.5rem;
+  border-radius: 1rem;
+  border: none;
+  transition: transform 0.3s, background-color 0.3s;
+  cursor: pointer;
+}
+
+button:not(:disabled):hover,
+input:hover + label {
+  transform: scale(1.05);
+}
+
+/* a8y */
+input:focus + label,
+button:focus {
+  outline: 1px solid #000;
+  outline: -webkit-focus-ring-color auto 2px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  filter: saturate(0%);
+}
