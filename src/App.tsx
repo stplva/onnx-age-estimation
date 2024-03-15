@@ -104,67 +104,85 @@ function App() {
     setDetailedOutput(output);
   };
 
+  const modelStatus = String.fromCodePoint(model ? 0x1f7e2 : 0x1f534);
+
   return (
     <div className="wrapper">
-      <h1>Age Estimator</h1>
-      <p className="helper-text">
-        For better results please use a high-quality image of your face with
-        simple/plain background.
-      </p>
-      {selectedImage && (
-        <img
-          id="inputImage"
-          src={selectedImage.url}
-          crossOrigin="anonymous"
-          ref={inputImage}
-          onLoad={preprocess}
-        />
-      )}
-
-      <div className="upload--wrapper">
-        <input
-          id="file"
-          type="file"
-          className="upload--file"
-          accept="image/*"
-          onChange={handleFileChange}
-        />
-        <label htmlFor="file" className="upload--label">
-          Choose a file
-        </label>
+      <main>
+        <h1>Age Estimator</h1>
+        <p className="author-text">
+          Made by{" "}
+          <a href="https://github.com/stplva" target="_blank">
+            @stplva
+          </a>
+        </p>
+        <p className="helper-text">
+          For better results, please use a high-quality image of your face with
+          simple/plain background.
+        </p>
         {selectedImage && (
-          <span className="upload--file-name">
-            {selectedImage.name} {(selectedImage.size / 1000000).toFixed(2)}Mb
-          </span>
+          <img
+            id="inputImage"
+            ref={inputImage}
+            src={selectedImage.url}
+            crossOrigin="anonymous"
+            onLoad={preprocess}
+            alt={selectedImage.name}
+            className="user-image"
+          />
         )}
-      </div>
 
-      <div className="results--wrapper">
-        <button
-          id="estimateAge"
-          type="button"
-          onClick={estimateAge}
-          className="results--btn"
-          disabled={!selectedImage}
-        >
-          Estimate Age
-        </button>
-        {estimatedAge && <span>Estimated Age: {estimatedAge}</span>}
-      </div>
-      {detailedOutput && (
-        <div className="details--wrapper">
-          <details>
-            <summary>Detailed age recognition results</summary>
-            {AGE_INTERVALS.map((interval, index) => {
-              return (
-                <p key={interval}>
-                  <b>{interval}</b>: {detailedOutput[index]}
-                </p>
-              );
-            })}
-          </details>
+        <div className="upload--wrapper">
+          <input
+            id="file"
+            type="file"
+            className="upload--file"
+            accept="image/*"
+            onChange={handleFileChange}
+          />
+          <label htmlFor="file" className="upload--label">
+            {selectedImage ? "Try another one!" : "Choose a file"}
+          </label>
+          {selectedImage && (
+            <span className="upload--file-name">
+              {selectedImage.name} {(selectedImage.size / 1000000).toFixed(2)}Mb
+            </span>
+          )}
         </div>
-      )}
+
+        <div className="results--wrapper">
+          <button
+            id="estimateAge"
+            type="button"
+            onClick={estimateAge}
+            className="results--btn"
+            disabled={!selectedImage}
+          >
+            Estimate Age
+          </button>
+          {estimatedAge && <span>Estimated Age: {estimatedAge}</span>}
+        </div>
+        {detailedOutput && (
+          <div className="details--wrapper">
+            <details>
+              <summary>Detailed age recognition results</summary>
+              {AGE_INTERVALS.map((interval, index) => {
+                return (
+                  <p key={interval}>
+                    <b>{interval}</b>: {detailedOutput[index]}
+                  </p>
+                );
+              })}
+            </details>
+          </div>
+        )}
+      </main>
+      <aside>
+        <h3>Status</h3>
+        <ul>
+          <li>Model initialized: {modelStatus}</li>
+        </ul>
+      </aside>
     </div>
   );
 }

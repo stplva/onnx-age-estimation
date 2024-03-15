@@ -1,6 +1,4 @@
-/*
- * Remove the alpha channel from an interleaved RGBA imagedata array.
- */
+// Remove the alpha channel from an interleaved RGBA imagedata array
 export const removeAlpha = (array: Uint8ClampedArray) => {
   const result = new Uint8ClampedArray((array.length / 4) * 3);
   for (let i = 0; i < array.length; i += 4) {
@@ -11,9 +9,7 @@ export const removeAlpha = (array: Uint8ClampedArray) => {
   return result;
 };
 
-/*
- * Convert from interleaved RGB to planar RGB.
- */
+// Convert from interleaved RGB to planar RGB
 export const interleavedToPlanar = (array: Float32Array) => {
   const plane_size = array.length / 3;
   const result = new Float32Array(array.length);
