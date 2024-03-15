@@ -91,7 +91,10 @@ function App() {
     setPreprocessed(channelSeparated);
   };
 
-  const estimateAge = async () => {
+  const estimateAge = async (e: React.SyntheticEvent<HTMLButtonElement>) => {
+    const isDisabled = e.currentTarget.ariaDisabled === "true";
+    if (isDisabled) return;
+
     const tensor = new Tensor(preprocessed!, [1, 3, INPUT_HEIGHT, INPUT_WIDTH]);
 
     const results = await model.run({ input: tensor });
@@ -112,7 +115,7 @@ function App() {
         <h1>Age Estimator</h1>
         <p className="author-text">
           Made by{" "}
-          <a href="https://github.com/stplva" target="_blank">
+          <a href="https://github.com/stplva" target="_blank" rel="noreferrer">
             @stplva
           </a>
         </p>
@@ -139,6 +142,7 @@ function App() {
             className="upload--file"
             accept="image/*"
             onChange={handleFileChange}
+            aria-label="Choose a file"
           />
           <label htmlFor="file" className="upload--label">
             {selectedImage ? "Try another one!" : "Choose a file"}
@@ -156,7 +160,8 @@ function App() {
             type="button"
             onClick={estimateAge}
             className="results--btn"
-            disabled={!selectedImage}
+            aria-disabled={!selectedImage ? "true" : "false"}
+            aria-label="Estimate age"
           >
             Estimate Age
           </button>

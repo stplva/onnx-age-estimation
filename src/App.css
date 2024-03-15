@@ -30,8 +30,8 @@
 
 .wrapper h1 {
   margin-bottom: 0;
-  color: hotpink;
-  text-shadow: 3px 2px 0px mediumblue;
+  color: mediumblue;
+  text-shadow: 3px 2px 0px hotpink;
   font-size: 3rem;
   margin-top: 2rem;
 }
@@ -89,19 +89,19 @@
 .results--btn {
   margin-right: 1rem;
   font-weight: 700;
-  border: 5px solid hotpink;
-  color: hotpink;
+  border: 5px solid mediumblue;
+  color: mediumblue;
   background: transparent;
   font-size: inherit;
 }
 
-.results--btn:not(:disabled) {
+.results--btn:not([aria-disabled="true"]) {
   font-size: 1.25rem;
 }
 
-.results--btn:not(:disabled):hover {
-  border-color: darkviolet;
-  color: darkviolet;
+.results--btn:not([aria-disabled="true"]):hover {
+  border-color: hotpink;
+  color: hotpink;
 }
 
 .details--wrapper p {
