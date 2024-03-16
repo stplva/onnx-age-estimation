@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/onnx-age-estimation/static/css/main.5b45fcd0.css",
-    "main.js": "/onnx-age-estimation/static/js/main.c8282d3d.js",
+    "main.css": "/onnx-age-estimation/static/css/main.4428f915.css",
+    "main.js": "/onnx-age-estimation/static/js/main.ef7e5ec5.js",
     "index.html": "/onnx-age-estimation/index.html",
-    "main.5b45fcd0.css.map": "/onnx-age-estimation/static/css/main.5b45fcd0.css.map",
-    "main.c8282d3d.js.map": "/onnx-age-estimation/static/js/main.c8282d3d.js.map"
+    "main.4428f915.css.map": "/onnx-age-estimation/static/css/main.4428f915.css.map",
+    "main.ef7e5ec5.js.map": "/onnx-age-estimation/static/js/main.ef7e5ec5.js.map"
   },
   "entrypoints": [
-    "static/css/main.5b45fcd0.css",
-    "static/js/main.c8282d3d.js"
+    "static/css/main.4428f915.css",
+    "static/js/main.ef7e5ec5.js"
   ]
 }
