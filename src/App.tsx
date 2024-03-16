@@ -145,7 +145,7 @@ function App() {
             aria-label="Choose a file"
           />
           <label htmlFor="file" className="upload--label">
-            {selectedImage ? "Try another one!" : "Choose a file"}
+            {selectedImage ? "Another one!" : "Choose a file"}
           </label>
           {selectedImage && (
             <span className="upload--file-name">

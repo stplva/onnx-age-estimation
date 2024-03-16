@@ -28,7 +28,7 @@ button {
   width: fit-content;
   padding: 0.7rem 1.5rem;
   border: none;
-  transition: font-size 0.3s, color 0.3s, border-color 0.3s;
+  transition: font-size 0.3s, color 0.3s, background 0.3s;
   cursor: pointer;
 }
 
@@ -43,6 +43,7 @@ button:disabled,
 button[aria-disabled="true"] {
   cursor: not-allowed;
   opacity: 0.5;
+  filter: saturate(0);
 }
 
 ul {

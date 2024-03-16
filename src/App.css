@@ -67,13 +67,16 @@
   width: fit-content;
   position: relative;
   padding: 0.7rem 1.5rem;
-  background: lightgray;
   cursor: pointer;
   transition: background 0.3s;
+
+  background: #ff44a2;
+  color: white;
+  font-weight: 700;
 }
 
 .upload--label:hover {
-  background: #c2c2c2;
+  background: mediumblue;
 }
 
 .user-image {
@@ -89,9 +92,8 @@
 .results--btn {
   margin-right: 1rem;
   font-weight: 700;
-  border: 5px solid mediumblue;
-  color: mediumblue;
-  background: transparent;
+  color: white;
+  background: mediumblue;
   font-size: inherit;
 }
 
@@ -100,8 +102,7 @@
 }
 
 .results--btn:not([aria-disabled="true"]):hover {
-  border-color: hotpink;
-  color: hotpink;
+  background: #ff44a2;
 }
 
 .details--wrapper p {
