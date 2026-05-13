@@ -25,8 +25,8 @@ function App() {
   const [detailedOutput, setDetailedOutput] = useState<Float32Array>();
 
   const initializeModel = async () => {
-    model = await InferenceSession.create("age_googlenet.onnx", {
-      executionProviders: ["webgl"],
+    model = await InferenceSession.create(`${import.meta.env.BASE_URL}age_googlenet.onnx`, {
+      executionProviders: ["webgpu", "wasm"],
     });
   };
 
